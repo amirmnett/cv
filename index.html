@@ -46,12 +46,25 @@
     will-change: transform;
   }
 
-  .card:hover, .skill-card-group:hover, .course-box:hover {
-    transform: scale(1.03);
-    z-index: 10;
-    position: relative;
-    border-color: #38bdf8 !important;
-    box-shadow: 0 12px 28px -5px rgba(56, 189, 248, 0.25) !important;
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover, .skill-card-group:hover, .course-box:hover {
+      transform: scale(1.03);
+      z-index: 10;
+      position: relative;
+      border-color: #38bdf8 !important;
+      box-shadow: 0 12px 28px -5px rgba(56, 189, 248, 0.25) !important;
+    }
+
+    .header-card:hover {
+      transform: scale(1.015);
+      border-color: #f59e0b !important;
+      box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.25) !important;
+    }
+
+    .portfolio-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3) !important;
+    }
   }
 
   /* Header Section */
@@ -65,12 +78,6 @@
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     break-inside: avoid;
-  }
-
-  .header-card:hover {
-    transform: scale(1.015);
-    border-color: #f59e0b !important;
-    box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.25) !important;
   }
 
   /* Engineering Blueprint Grid Pattern Background */
@@ -157,6 +164,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    flex-wrap: wrap;
   }
 
   .contact-bar {
@@ -392,11 +400,6 @@
     break-inside: avoid;
   }
 
-  .portfolio-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3) !important;
-  }
-
   .portfolio-link {
     display: block;
     margin-top: 6px;
@@ -459,32 +462,11 @@
     box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
   }
 
-  /* Specific Brand Colors on Hover */
-  .fab-btn.linkedin:hover {
-    background-color: #0a66c2;
-    color: #ffffff;
-    box-shadow: 0 10px 20px rgba(10, 102, 194, 0.4);
-  }
+  .fab-btn.linkedin:hover { background-color: #0a66c2; color: #ffffff; box-shadow: 0 10px 20px rgba(10, 102, 194, 0.4); }
+  .fab-btn.telegram:hover { background-color: #229ed9; color: #ffffff; box-shadow: 0 10px 20px rgba(34, 158, 217, 0.4); }
+  .fab-btn.email:hover { background-color: #ea4335; color: #ffffff; box-shadow: 0 10px 20px rgba(234, 67, 53, 0.4); }
+  .fab-btn.phone:hover { background-color: #10b981; color: #ffffff; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4); }
 
-  .fab-btn.telegram:hover {
-    background-color: #229ed9;
-    color: #ffffff;
-    box-shadow: 0 10px 20px rgba(34, 158, 217, 0.4);
-  }
-
-  .fab-btn.email:hover {
-    background-color: #ea4335;
-    color: #ffffff;
-    box-shadow: 0 10px 20px rgba(234, 67, 53, 0.4);
-  }
-
-  .fab-btn.phone:hover {
-    background-color: #10b981;
-    color: #ffffff;
-    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
-  }
-
-  /* Tooltip for FAB buttons */
   .fab-btn::before {
     content: attr(data-tooltip);
     position: absolute;
@@ -506,6 +488,79 @@
   .fab-btn:hover::before {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  /* Responsive Rules for Mobile and Tablet Devices */
+  @media screen and (max-width: 850px) {
+    body {
+      padding: 0;
+      background-color: #0f172a;
+    }
+
+    .page-container {
+      width: 100%;
+      min-height: auto;
+      padding: 16px;
+      box-shadow: none;
+    }
+
+    .main-grid {
+      grid-template-columns: 1fr; /* Single column on mobile */
+      gap: 16px;
+    }
+
+    .header-card {
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .header-top {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .job-title {
+      justify-content: center;
+      font-size: 9.5pt;
+    }
+
+    .name {
+      font-size: 18pt;
+    }
+
+    .contact-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 8pt;
+    }
+
+    .profile-photo {
+      width: 90px;
+      height: 90px;
+    }
+
+    .floating-contact-bar {
+      bottom: 15px;
+      right: 15px;
+      gap: 8px;
+    }
+
+    .fab-btn {
+      width: 42px;
+      height: 42px;
+    }
+
+    .fab-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .fab-btn::before {
+      display: none; /* Hide tooltips on touch devices */
+    }
   }
 
   /* Print Stylesheet */
@@ -554,7 +609,6 @@
     .profile-photo {
       border-color: #0284c7 !important;
     }
-    /* Hide floating buttons when printing */
     .floating-contact-bar {
       display: none !important;
     }
