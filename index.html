@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رزومه - امیرمصطفی نعمت‌اللهی</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #020617;
+    color: #f8fafc;
+    font-size: 9.5pt;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page-container {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background-color: #0f172a;
+    position: relative;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  }
+
+  /* Interactive Card Zoom Effect (Hover) */
+  .card, .header-card, .portfolio-card, .skill-card-group, .course-box {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.3s ease, 
+                border-color 0.3s ease;
+    will-change: transform;
+  }
+
+  .card:hover, .skill-card-group:hover, .course-box:hover {
+    transform: scale(1.03);
+    z-index: 10;
+    position: relative;
+    border-color: #38bdf8 !important;
+    box-shadow: 0 12px 28px -5px rgba(56, 189, 248, 0.25) !important;
+  }
+
+  /* Header Section */
+  .header-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 20px 25px;
+    margin-bottom: 18px;
+    position: relative;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    break-inside: avoid;
+  }
+
+  .header-card:hover {
+    transform: scale(1.015);
+    border-color: #f59e0b !important;
+    box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.25) !important;
+  }
+
+  /* Engineering Blueprint Grid Pattern Background */
+  .header-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 0),
+      linear-gradient(to right, rgba(51, 65, 85, 0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(51, 65, 85, 0.15) 1px, transparent 1px);
+    background-size: 16px 16px, 16px 16px, 16px 16px;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .header-card::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, #f59e0b, #38bdf8);
+    border-radius: 0 16px 16px 0;
+    z-index: 2;
+  }
+
+  .header-tech-watermark {
+    position: absolute;
+    left: 110px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+    color: #38bdf8;
+  }
+
+  .header-content-wrap {
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+  }
+
+  .header-text {
+    flex: 1;
+  }
+
+  .profile-photo {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 2px solid #38bdf8;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .profile-photo:hover {
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  .name {
+    font-size: 22pt;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.5px;
+  }
+
+  .job-title {
+    font-size: 10.5pt;
+    color: #f59e0b;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .contact-bar {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(15, 23, 42, 0.75);
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 8.5pt;
+    color: #94a3b8;
+    flex-wrap: wrap;
+    gap: 8px;
+    backdrop-filter: blur(4px);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .contact-item span {
+    color: #38bdf8;
+    font-weight: bold;
+  }
+
+  /* Two Column Layout Grid */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    gap: 16px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Glass Cards */
+  .card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 16px 18px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .card-title {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #38bdf8;
+    margin-top: 0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+  }
+
+  .about-text {
+    font-size: 8.8pt;
+    color: #cbd5e1;
+    text-align: justify;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  /* Skill Group Cards */
+  .skill-card-group {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+
+  .skill-card-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-group-title {
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: #38bdf8;
+    text-align: center;
+    border-bottom: 1px dashed #334155;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+
+  .skill-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 8pt;
+  }
+
+  .skill-item-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-name-text {
+    font-weight: 600;
+    color: #f1f5f9;
+  }
+
+  .skill-dots {
+    display: flex;
+    gap: 3px;
+    direction: ltr;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #334155;
+    transition: background-color 0.2s ease;
+  }
+
+  .dot.active {
+    background-color: #38bdf8;
+  }
+
+  .skill-card-group:hover .dot.active {
+    background-color: #f59e0b;
+  }
+
+  /* Timeline Item Dark */
+  .timeline-item {
+    border-right: 2px solid #38bdf8;
+    padding-right: 14px;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #f59e0b;
+  }
+
+  .item-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .item-sub {
+    font-size: 8.5pt;
+    color: #94a3b8;
+    margin-top: 2px;
+  }
+
+  .date-tag {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 1px 8px;
+    border-radius: 6px;
+    font-size: 7.5pt;
+    font-weight: bold;
+    margin-top: 6px;
+  }
+
+  /* Info List */
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 8.5pt;
+  }
+
+  .info-list li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #334155;
+    display: flex;
+    justify-content: space-between;
+    color: #94a3b8;
+  }
+
+  .info-list li:last-child {
+    border-bottom: none;
+  }
+
+  .info-list strong {
+    color: #f1f5f9;
+  }
+
+  /* Course Tag */
+  .course-box {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    margin-bottom: 8px;
+  }
+
+  .course-box:last-child {
+    margin-bottom: 0;
+  }
+
+  .course-title {
+    color: #f1f5f9;
+    font-weight: 700;
+    font-size: 8.5pt;
+  }
+
+  .course-desc {
+    color: #94a3b8;
+    font-size: 7.8pt;
+    margin-top: 2px;
+  }
+
+  /* Portfolio Link */
+  .portfolio-card {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(56, 189, 248, 0.1) 100%);
+    border: 1px solid #f59e0b;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    break-inside: avoid;
+  }
+
+  .portfolio-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3) !important;
+  }
+
+  .portfolio-link {
+    display: block;
+    margin-top: 6px;
+    background: #0f172a;
+    color: #38bdf8;
+    padding: 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 7.8pt;
+    text-decoration: none;
+    border: 1px solid #334155;
+    word-break: break-all;
+    direction: ltr;
+    transition: all 0.2s;
+  }
+
+  .portfolio-link:hover {
+    border-color: #38bdf8;
+    color: #f59e0b;
+  }
+
+  /* Floating Action Buttons (FAB) Bar - Bottom Right */
+  .floating-contact-bar {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .fab-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    color: #38bdf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+  }
+
+  .fab-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    transition: transform 0.2s ease;
+  }
+
+  .fab-btn:hover {
+    transform: scale(1.15) translateX(-4px);
+    background-color: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
+  }
+
+  /* Specific Brand Colors on Hover */
+  .fab-btn.linkedin:hover {
+    background-color: #0a66c2;
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(10, 102, 194, 0.4);
+  }
+
+  .fab-btn.telegram:hover {
+    background-color: #229ed9;
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(34, 158, 217, 0.4);
+  }
+
+  .fab-btn.email:hover {
+    background-color: #ea4335;
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(234, 67, 53, 0.4);
+  }
+
+  .fab-btn.phone:hover {
+    background-color: #10b981;
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+  }
+
+  /* Tooltip for FAB buttons */
+  .fab-btn::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 58px;
+    background: #0f172a;
+    color: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 8pt;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateX(8px);
+    border: 1px solid #334155;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .fab-btn:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Print Stylesheet */
+  @media print {
+    body {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+    .page-container {
+      background-color: #ffffff !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+    .card, .header-card, .skill-card-group, .course-box {
+      background: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+    .header-card::after {
+      display: none !important;
+    }
+    .name, .item-title, .course-title, .info-list strong, .skill-name-text {
+      color: #0f172a !important;
+    }
+    .about-text, .item-sub, .contact-bar, .course-desc, .info-list li {
+      color: #334155 !important;
+    }
+    .portfolio-card {
+      background: #f8fafc !important;
+      border: 1px solid #cbd5e1 !important;
+      transform: none !important;
+    }
+    .portfolio-link {
+      background: #ffffff !important;
+      color: #2563eb !important;
+      border-color: #cbd5e1 !important;
+    }
+    .dot {
+      background-color: #e2e8f0 !important;
+    }
+    .dot.active {
+      background-color: #0284c7 !important;
+    }
+    .profile-photo {
+      border-color: #0284c7 !important;
+    }
+    /* Hide floating buttons when printing */
+    .floating-contact-bar {
+      display: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-container">
+  
+  <!-- Technical Header Card -->
+  <header class="header-card">
+    
+    <!-- Watermark SVG Icon -->
+    <svg class="header-tech-watermark" width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+
+    <div class="header-content-wrap">
+      <div class="header-top">
+        <div class="header-text">
+          <h1 class="name">امیرمصطفی نعمت‌اللهی</h1>
+          <div class="job-title">
+            <span>مهندس ماشین‌های ریلی</span> | 
+            <span>طراح سه بعدی</span> | 
+            <span>برنامه‌نویس C/C++</span>
+          </div>
+        </div>
+        <img src="profile.jpg" alt="امیرمصطفی نعمت‌اللهی" class="profile-photo">
+      </div>
+      
+      <div class="contact-bar">
+        <div class="contact-item"><span>✉</span> amir.mnt2006@gmail.com</div>
+        <div class="contact-item"><span>📱</span> ۰۹۹۴۴۷۴۹۹۰۱</div>
+        <div class="contact-item"><span>📍</span> فارس، آباده / تهران</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Grid -->
+  <div class="main-grid">
+    
+    <!-- Right Column (Sidebar: Personal Info & Skills) -->
+    <div class="column right-col">
+      
+      <!-- Personal Details -->
+      <section class="card">
+        <div class="card-title">👤 اطلاعات فردی</div>
+        <ul class="info-list">
+          <li><span>متولد:</span> <strong>۱۳۸۵/۰۵/۲۹</strong></li>
+          <li><span>نظام وظیفه:</span> <strong>معافیت تحصیلی</strong></li>
+          <li><span>وضعیت تأهل:</span> <strong>مجرد</strong></li>
+          <li><span>زبان انگلیسی:</span> <strong>متوسط (Intermediate)</strong></li>
+        </ul>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="card">
+        <div class="card-title">⚙️ مهارت‌های تخصصی</div>
+        
+        <!-- Group 1: Engineering Design -->
+        <div class="skill-card-group">
+          <div class="skill-group-title">⚙️ طراحی و تحلیل مهندسی</div>
+          
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">SolidWorks</span>
+          </div>
+
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">ANSYS</span>
+          </div>
+
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">UltiMaker Cura</span>
+          </div>
+
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">Abaqus</span>
+          </div>
+
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">EES</span>
+          </div>
+        </div>
+
+        <!-- Group 2: Programming -->
+        <div class="skill-card-group">
+          <div class="skill-group-title">💻 برنامه‌نویسی و نرم‌افزار</div>
+          
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">C / C++</span>
+          </div>
+
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">Python</span>
+          </div>
+        </div>
+
+        <!-- Group 3: Graphics & Video -->
+        <div class="skill-card-group">
+          <div class="skill-group-title">🎬 گرافیک و تدوین</div>
+          
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">Premiere Pro</span>
+          </div>
+
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">Photoshop</span>
+          </div>
+
+          <div class="skill-item-row">
+            <div class="skill-dots">
+              <span class="dot active"></span>
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="skill-name-text">CorelDRAW</span>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- Left Column (Main Content) -->
+    <div class="column left-col">
+      
+      <!-- Summary -->
+      <section class="card">
+        <div class="card-title">📝 درباره من</div>
+        <p class="about-text">
+          دانشجوی مهندسی ماشین‌های ریلی دانشگاه علم و صنعت ایران، با تمرکز بر طراحی قطعات و تحلیل‌های مکانیکی. دارای تجربه عملی در مدل‌سازی با SolidWorks، شبیه‌سازی مهندسی (ANSYS و Abaqus) و آماده‌سازی مدل‌ها برای ساخت افزایشی (پرینت ۳بعدی). در کنار دانش فنی، سابقه فعالیت به‌عنوان دستیار آموزشی (TA)، برنامه‌نویسی به زبان C/++C و تولید محتوای تصویری را در کارنامه دارم.
+        </p>
+      </section>
+
+      <!-- Education Section -->
+      <section class="card">
+        <div class="card-title">🎓 سوابق تحصیلی</div>
+        
+        <div class="timeline-item">
+          <div class="item-title">کارشناسی مهندسی ماشین‌های ریلی</div>
+          <div class="item-sub">دانشگاه علم و صنعت ایران - تهران</div>
+          <span class="date-tag">۱۴۰۳ - تاکنون</span>
+        </div>
+      </section>
+
+      <!-- Work & Scientific Experience Section -->
+      <section class="card">
+        <div class="card-title">💼 سوابق کاری و علمی</div>
+        
+        <div class="timeline-item">
+          <div class="item-title">دستیار آموزشی (TA) - درس مبانی برنامه‌نویسی ++C</div>
+          <div class="item-sub">دانشگاه علم و صنعت ایران - دانشکده کامپیوتر</div>
+          <span class="date-tag">۱۴۰۴ - ۱۴۰۵</span>
+        </div>
+      </section>
+
+      <!-- Courses -->
+      <section class="card">
+        <div class="card-title">📜 دوره‌های آموزشی</div>
+        
+        <div class="course-box">
+          <div class="course-title">بازرسی جوش و تست‌های غیرمخرب (NDT)</div>
+          <div class="course-desc">دانشگاه علم و صنعت | ۱۲ ساعت (۱۴۰۴)</div>
+        </div>
+
+        <div class="course-box">
+          <div class="course-title">سرویس و نگهداری خودرو</div>
+          <div class="course-desc">سازمان فنی و حرفه‌ای | ۱۶۰ ساعت</div>
+        </div>
+
+        <div class="course-box">
+          <div class="course-title">تعمیر استارت ساده خودرو</div>
+          <div class="course-desc">سازمان فنی و حرفه‌ای | ۳۰ ساعت</div>
+        </div>
+      </section>
+
+      <!-- Portfolio Link -->
+      <section class="portfolio-card">
+        <span style="font-weight: 700; color: #f59e0b; font-size: 8.5pt;">📂 آرشیو پروژه‌ها و نمونه‌کارها (Google Drive)</span>
+        <a class="portfolio-link" href="https://drive.iust.ac.ir/index.php/s/8yon4fCf5xQR2Sb" target="_blank" rel="noopener noreferrer">
+          https://drive.iust.ac.ir/index.php/s/8yon4fCf5xQR2Sb
+        </a>
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Floating Action Buttons (FAB) Bar - Bottom Right -->
+<div class="floating-contact-bar">
+  <!-- Phone -->
+  <a href="tel:09944749901" class="fab-btn phone" data-tooltip="تماس تلفنی" aria-label="Phone">
+    <svg viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    </svg>
+  </a>
+
+  <!-- Email -->
+  <a href="mailto:amir.mnt2006@gmail.com" class="fab-btn email" data-tooltip="ارسال ایمیل" aria-label="Email">
+    <svg viewBox="0 0 24 24">
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+  </a>
+
+  <!-- Telegram -->
+  <a href="https://t.me/AmirMNT" target="_blank" rel="noopener noreferrer" class="fab-btn telegram" data-tooltip="تلگرام" aria-label="Telegram">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/amir-mnt/" target="_blank" rel="noopener noreferrer" class="fab-btn linkedin" data-tooltip="صفحه لینکدین" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24">
+      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+    </svg>
+  </a>
+</div>
+
+</body>
+</html>
